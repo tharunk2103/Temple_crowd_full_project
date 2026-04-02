@@ -1,0 +1,36 @@
+# Core Framework
+flask==3.0.0
+flask-cors==4.0.0
+
+# AI / Computer Vision
+ultralytics==8.1.0
+opencv-python==4.9.0.80
+numpy==1.26.4
+
+# Database
+pymongo==4.6.1
+dnspython==2.6.1
+
+# Authentication
+bcrypt==4.1.2
+
+# SMS Alerts
+twilio==8.10.0
+
+# Audio Monitoring
+sounddevice==0.4.6
+
+# Admin Dashboard
+streamlit==1.31.0
+pandas==2.2.0
+matplotlib==3.8.2
+plotly==5.18.0
+
+# Utilities
+python-dotenv==1.0.1
+requests==2.31.0
+Pillow==10.2.0
+
+# Threading (built-in, no install needed)
+# json (built-in, no install needed)
+# hashlib (built-in, no install needed)

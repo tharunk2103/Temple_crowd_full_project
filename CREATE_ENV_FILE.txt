@@ -1,0 +1,50 @@
+HOW TO CREATE .env FILE
+=======================
+
+File Name: .env
+(Exactly this - dot at the beginning, no extension)
+
+Location: /Users/tharunkumar/Desktop/temple_crowd_project/.env
+
+METHOD 1: Using Terminal
+-------------------------
+cd /Users/tharunkumar/Desktop/temple_crowd_project
+touch .env
+nano .env
+# Then paste your credentials and save (Ctrl+X, Y, Enter)
+
+METHOD 2: Using Text Editor
+---------------------------
+1. Open your text editor (VS Code, TextEdit, etc.)
+2. Create a NEW file
+3. Name it exactly: .env
+4. Make sure it's in the project folder
+5. Add your credentials
+6. Save
+
+METHOD 3: Using VS Code
+-----------------------
+1. Right-click in the project folder
+2. Select "New File"
+3. Type: .env
+4. Press Enter
+5. Add your credentials
+6. Save
+
+IMPORTANT NOTES:
+- The file name is exactly: .env (with a dot)
+- No extension like .txt or .env.txt
+- It should be in the same folder as yolo_processor_mongo.py
+- The dot at the beginning makes it a hidden file (that's normal)
+
+CONTENTS OF .env FILE:
+----------------------
+TWILIO_ACCOUNT_SID=your_account_sid_here
+TWILIO_AUTH_TOKEN=your_auth_token_here
+TWILIO_PHONE_NUMBER=+1234567890
+RECIPIENT_PHONE_NUMBERS=+1234567890
+THRESHOLD_TOTAL_CROWD=20
+THRESHOLD_ENTRANCE=10
+THRESHOLD_QUEUE=15
+THRESHOLD_SANCTUM=8
+THRESHOLD_EXIT=10

@@ -1,0 +1,10 @@
+{
+  "total_crowd": 200,
+  "zones": {
+    "Entrance": 0,
+    "Queue": 0,
+    "Sanctum": 50,
+    "Exit": 50
+  },
+  "updated_at": "2026-01-23T18:25:34.858337"
+}

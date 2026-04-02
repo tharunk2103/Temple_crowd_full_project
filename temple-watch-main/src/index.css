@@ -1,0 +1,211 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+
+@layer base {
+  :root {
+    --background: 220 14% 96%;
+    --foreground: 222 47% 11%;
+
+    --card: 0 0% 100%;
+    --card-foreground: 222 47% 11%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 222 47% 11%;
+
+    --primary: 222 47% 20%;
+    --primary-foreground: 210 40% 98%;
+
+    --secondary: 215 20% 65%;
+    --secondary-foreground: 222 47% 11%;
+
+    --muted: 220 14% 90%;
+    --muted-foreground: 215 16% 47%;
+
+    --accent: 222 47% 25%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 72% 51%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 220 13% 87%;
+    --input: 220 13% 87%;
+    --ring: 222 47% 20%;
+
+    --radius: 0.5rem;
+
+    /* Status colors */
+    --status-safe: 142 76% 36%;
+    --status-safe-foreground: 0 0% 100%;
+    --status-warning: 38 92% 50%;
+    --status-warning-foreground: 0 0% 0%;
+    --status-danger: 0 84% 60%;
+    --status-danger-foreground: 0 0% 100%;
+
+    /* Custom tokens */
+    --sidebar-background: 222 47% 11%;
+    --sidebar-foreground: 210 40% 98%;
+    --sidebar-primary: 222 47% 25%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 222 47% 18%;
+    --sidebar-accent-foreground: 210 40% 98%;
+    --sidebar-border: 222 47% 18%;
+    --sidebar-ring: 217 91% 60%;
+
+    /* Dashboard specific */
+    --feed-bg: 220 14% 20%;
+    --count-highlight: 222 47% 20%;
+  }
+
+  .dark {
+    --background: 222 47% 8%;
+    --foreground: 210 40% 98%;
+
+    --card: 222 47% 11%;
+    --card-foreground: 210 40% 98%;
+
+    --popover: 222 47% 11%;
+    --popover-foreground: 210 40% 98%;
+
+    --primary: 210 40% 98%;
+    --primary-foreground: 222 47% 11%;
+
+    --secondary: 217 33% 17%;
+    --secondary-foreground: 210 40% 98%;
+
+    --muted: 217 33% 17%;
+    --muted-foreground: 215 20% 65%;
+
+    --accent: 217 33% 17%;
+    --accent-foreground: 210 40% 98%;
+
+    --destructive: 0 63% 31%;
+    --destructive-foreground: 210 40% 98%;
+
+    --border: 217 33% 17%;
+    --input: 217 33% 17%;
+    --ring: 213 27% 84%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground font-sans antialiased;
+    font-family: 'Inter', sans-serif;
+  }
+}
+
+@layer components {
+  .status-safe {
+    @apply bg-[hsl(var(--status-safe))] text-[hsl(var(--status-safe-foreground))];
+  }
+
+  .status-warning {
+    @apply bg-[hsl(var(--status-warning))] text-[hsl(var(--status-warning-foreground))];
+  }
+
+  .status-danger {
+    @apply bg-[hsl(var(--status-danger))] text-[hsl(var(--status-danger-foreground))];
+  }
+
+  .feed-placeholder {
+    @apply bg-[hsl(var(--feed-bg))] rounded-lg flex items-center justify-center;
+  }
+
+  .card-elevated {
+    @apply bg-card rounded-xl shadow-sm border border-border;
+  }
+
+  .sidebar-nav {
+    @apply bg-[hsl(var(--sidebar-background))] text-[hsl(var(--sidebar-foreground))];
+  }
+
+  .sidebar-item {
+    @apply flex items-center gap-3 px-4 py-3 rounded-lg transition-colors cursor-pointer;
+  }
+
+  .sidebar-item:hover {
+    @apply bg-[hsl(var(--sidebar-accent))];
+  }
+
+  .sidebar-item.active {
+    @apply bg-[hsl(var(--sidebar-primary))] text-[hsl(var(--sidebar-primary-foreground))];
+  }
+
+  .pulse-indicator {
+    animation: pulse-ring 1.5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes pulse-ring {
+    0%, 100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0.5;
+    }
+  }
+
+  /* Alert animations */
+  .alert-pulse {
+    animation: alert-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes alert-pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--status-danger) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 12px hsl(var(--status-danger) / 0);
+    }
+  }
+
+  .alert-glow {
+    animation: alert-glow 1.5s ease-in-out infinite alternate;
+  }
+
+  @keyframes alert-glow {
+    from {
+      box-shadow: 0 0 8px 2px hsl(var(--status-danger) / 0.3);
+    }
+    to {
+      box-shadow: 0 0 20px 6px hsl(var(--status-danger) / 0.5);
+    }
+  }
+
+  .warning-pulse {
+    animation: warning-pulse 2s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+  }
+
+  @keyframes warning-pulse {
+    0%, 100% {
+      box-shadow: 0 0 0 0 hsl(var(--status-warning) / 0.4);
+    }
+    50% {
+      box-shadow: 0 0 0 8px hsl(var(--status-warning) / 0);
+    }
+  }
+
+  /* Badge status variants */
+  .badge-safe {
+    @apply bg-[hsl(var(--status-safe)/0.15)] text-[hsl(var(--status-safe))] border border-[hsl(var(--status-safe)/0.3)];
+  }
+
+  .badge-warning {
+    @apply bg-[hsl(var(--status-warning)/0.15)] text-[hsl(var(--status-warning))] border border-[hsl(var(--status-warning)/0.3)];
+  }
+
+  .badge-danger {
+    @apply bg-[hsl(var(--status-danger)/0.15)] text-[hsl(var(--status-danger))] border border-[hsl(var(--status-danger)/0.3)];
+  }
+
+  /* Fullscreen overlay */
+  .fullscreen-overlay {
+    @apply fixed inset-0 z-50 bg-background/95 backdrop-blur-sm flex items-center justify-center;
+  }
+}

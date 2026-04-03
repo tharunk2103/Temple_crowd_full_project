@@ -46,7 +46,7 @@ curl http://localhost:5001/history
 **Via Python:**
 ```python
 from pymongo import MongoClient
-client = MongoClient("mongodb+srv://temple_crowd:kanchi@123@templecrowd.pywbjlx.mongodb.net/temple_crowd_db")
+client = MongoClient("** Enter your mongodb url**")
 db = client["temple_crowd_db"]
 collection = db["crowd_data"]
 
